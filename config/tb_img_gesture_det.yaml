@@ -1,0 +1,34 @@
+/**:
+  ros__parameters:
+    input_msg: tb_img
+    input_topic: /tbmem_img
+    tb_img_profile: "480p"
+    frame_id: camera
+    detections_topic: /gesture_detections
+    frame_skip: 0
+    enable_profile: true
+
+    model.backend: gesture_det
+    model.name: palm_gesture
+    model.type: mediapipe_palm
+    model.path: ~/topsbot/models/palm_detection_lite_int8.nb
+    postprocess.class_names:
+      - ~/topsbot/models/hand_landmark_lite_int8.nb
+
+    publish_object_attributes: true
+    object_attributes_topic: /classifications_by_object
+
+    npu.device_ids: [0]
+    load_balancer.strategy: least_loaded
+    load_balancer.queue_size: 2
+    load_balancer.drop_policy: drop_oldest
+
+    preprocess.engine: cpu_opencv
+    preprocess.input_width: 192
+    preprocess.input_height: 192
+    preprocess.interpolation: linear
+
+    postprocess.confidence_threshold: 0.5
+    postprocess.nms_threshold: 0.3
+    postprocess.landmark_confidence_threshold: 0.5
+    postprocess.max_detections: 10

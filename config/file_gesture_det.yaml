@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    model.backend: gesture_det
+    model.path: ~/topsbot/models/palm_detection_lite_int8.nb
+    postprocess.class_names:
+      - ~/topsbot/models/hand_landmark_lite_int8.nb
+
+    postprocess.confidence_threshold: 0.5
+    postprocess.nms_threshold: 0.3
+    postprocess.landmark_confidence_threshold: 0.5
+    
+    output_image_file: /tmp/topsbot_gesture_det/out_gesture.jpg

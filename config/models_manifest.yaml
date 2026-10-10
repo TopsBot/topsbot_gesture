@@ -1,0 +1,13 @@
+install_dir: "~/topsbot/models"
+
+# Archive containing gesture detection models.
+models_zip_url: "https://bj25486.apps.aliyunfile.com/disk/s/QqSNXcGqGfc?domainId=bj25486"
+
+required_models:
+  - palm_detection_lite_int8.nb
+  - hand_landmark_lite_int8.nb
+
+# Mapping of required names to archive names (files are in models/ subdirectory)
+model_mapping:
+  palm_detection_lite_int8.nb: models/palm_det_qat.nb
+  hand_landmark_lite_int8.nb: models/hand_landmark_qat.nb

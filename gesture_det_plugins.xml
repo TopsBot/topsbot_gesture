@@ -1,0 +1,10 @@
+<library path="topsbot_gesture_det_backend">
+  <class name="gesture_det"
+         type="topsbot_gesture_det::GestureDetBackend"
+         base_class_type="topsbot_ai_infer::IInferenceBackend">
+    <description>
+      Mediapipe palm detection + hand landmark backend for topsbot_ai_infer.
+      Outputs detected hands with bounding boxes, 21 keypoints, handedness and gesture.
+    </description>
+  </class>
+</library>
